@@ -23,10 +23,10 @@ public class User {
     private String email;
 
     @Column(name="sex")
-    private int sex;    //0表示女生,1表示男生
+    private Integer sex;    //0表示女生,1表示男生
 
     @Column(name="role")
-    private int role;   //角色0普通用户,1服务发布者,2平台管理员
+    private Integer role;   //角色0普通用户,1服务发布者,2平台管理员
     
     @Column(name="motto")
     private String motto;
