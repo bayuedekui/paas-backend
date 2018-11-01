@@ -36,7 +36,7 @@ public class DaoTest {
     
     @Test
     public void testUpdateUser(){
-        User shenshuting = userRepository.findByName("shenshuting");
+        User shenshuting = userRepository.findByName("zhengkui");
         shenshuting.setEmail("8468");
         userRepository.save(shenshuting);
     }

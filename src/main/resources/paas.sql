@@ -3,7 +3,7 @@ create database paas default character set utf8 collate utf8_general_ci;
 use paas;
 create table t_user(
   id              int(11)  not null primary key auto_increment,
-  name            varchar(255)  not null,
+  name            varchar(255)  not null unique ,
   password        varchar(255)  not null,
   email           varchar(255)  not null,
   sex             int(2),

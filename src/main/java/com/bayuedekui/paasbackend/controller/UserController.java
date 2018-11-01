@@ -72,11 +72,11 @@ public class UserController {
         String loginUser = HttpServletRequestUtil.getString(request, "loginUser");
         ObjectMapper mapper = new ObjectMapper();
         User user=null;
-        user = mapper.readValue(loginUser, User.class);
+        user = mapper.readValue(loginUser, User.class);     //获取用户输入的用户名和密码
         User oneUser = userService.getOneUserByName(user.getName());
-        if(PswMD5Util.EncoderByMd5(user.getPassword()) ==oneUser.getPassword()){
+        if(PswMD5Util.EncoderByMd5(user.getPassword()).equals(oneUser.getPassword())){
             modelMap.put("success", true);
-            modelMap.put("user", user);
+            modelMap.put("user", oneUser);
         }else{
             modelMap.put("success", false);
             modelMap.put("errMsg", "password error");
