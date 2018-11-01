@@ -16,7 +16,7 @@ public interface UserService {
      * 
      * @return
      */
-    User getOneUserByName();
+    User getOneUserByName(String name);
 
     /**
      * 增加用户

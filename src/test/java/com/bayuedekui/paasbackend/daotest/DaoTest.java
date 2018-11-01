@@ -1,4 +1,4 @@
-package com.bayuedekui.paasbackend.daoTest;
+package com.bayuedekui.paasbackend.daotest;
 
 import com.bayuedekui.paasbackend.dao.UserRepository;
 import com.bayuedekui.paasbackend.entity.User;

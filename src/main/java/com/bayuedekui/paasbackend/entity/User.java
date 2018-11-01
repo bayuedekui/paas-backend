@@ -1,8 +1,11 @@
 package com.bayuedekui.paasbackend.entity;
 
+import com.bayuedekui.paasbackend.utils.PswMD5Util;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 @Data
@@ -36,4 +39,5 @@ public class User {
 
     @Column(name="last_edit_time")
     private Date last_edit_time;
+    
 }
