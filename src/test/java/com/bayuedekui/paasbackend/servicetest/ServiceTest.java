@@ -22,4 +22,14 @@ public class ServiceTest {
         User zhengkui =  userService.getOneUserByName("zhengkui");
         System.out.println(zhengkui.toString());
     }
+    
+    @Test
+    public void testInsertUser(){
+        User user=new User();
+        user.setPassword("123");
+        user.setName("haha");
+        user.setEmail("11@qq.com");
+        User user1 = userService.addOneUser(user);
+        System.out.println(user1.toString());
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.DataInput;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -23,13 +24,15 @@ public class UserController {
     private UserService userService;
 
     @PostMapping(path = "/registory")
-    public Map<String, Object> registerUser(HttpServletRequest request) throws IOException, NoSuchAlgorithmException {
+    public Map<String, Object> registerUser(@RequestBody String userStr, HttpServletRequest request) throws IOException, NoSuchAlgorithmException {
         Map<String, Object> modelMap = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
-        String userStr = HttpServletRequestUtil.getString(request,"userStr");
+        
+//        String userStr = HttpServletRequestUtil.getString(request,"userStr");
+        
         User user=null;
         user = mapper.readValue(userStr, User.class);
-        user.setPassword(PswMD5Util.EncoderByMd5(user.getPassword()));
+            user.setPassword(PswMD5Util.EncoderByMd5(user.getPassword()));
         try {
             User user1 = userService.addOneUser(user);
             if (user1 != null) {
